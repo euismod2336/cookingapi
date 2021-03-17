@@ -24,8 +24,38 @@ class RecipeType extends GraphQLType
             'title'     => [
                 'type' => Type::string()
             ],
+            'image'     => [
+                'type' => Type::string()
+            ],
+            'description'     => [
+                'type' => Type::string()
+            ],
+            'amount_people'     => [
+                'type' => Type::int()
+            ],
+            'rating'     => [
+                'type' => Type::int()
+            ],
+            'effort'     => [
+                'type' => Type::int()
+            ],
+            'time'     => [
+                'type' => Type::string()
+            ],
+            'instructions'     => [
+                'type' => Type::string()
+            ],
+            'type'     => [
+                'type' => Type::string()
+            ],
+            'flavor_profile'     => [
+                'type' => Type::string()
+            ],
             'ingredients' => [
                 'type' => Type::listOf(GraphQL::type('ingredient'))
+            ],
+            'country' => [
+                'type' => GraphQL::type('country')
             ]
         ];
     }

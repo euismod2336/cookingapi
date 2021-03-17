@@ -18,4 +18,9 @@ class Country extends Model
     protected $fillable = [
         'name',
     ];
+
+    public function recipes()
+    {
+        return $this->hasMany(Recipe::class);
+    }
 }

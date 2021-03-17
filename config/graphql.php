@@ -5,10 +5,7 @@ declare(strict_types=1);
 use App\GraphQL\Queries\RecipesQuery;
 use App\GraphQL\Types\IngredientType;
 use App\GraphQL\Types\RecipeType;
-use example\Mutation\ExampleMutation;
-use example\Query\ExampleQuery;
-use example\Type\ExampleRelationType;
-use example\Type\ExampleType;
+use App\GraphQL\Types\CountryType;
 
 return [
 
@@ -126,6 +123,7 @@ return [
     'types' => [
         'recipe' => RecipeType::class,
         'ingredient' => IngredientType::class,
+        'country' => CountryType::class,
     ],
 
     // The types will be loaded on demand. Default is to load all types on each request
