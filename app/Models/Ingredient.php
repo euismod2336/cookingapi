@@ -9,4 +9,9 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class Ingredient extends Model
 {
     use HasFactory, SoftDeletes;
+
+    public function recipes()
+    {
+        return $this->belongsToMany(Recipe::class)->withPivot('amount');
+    }
 }

@@ -3,29 +3,30 @@ declare(strict_types=1);
 
 namespace App\GraphQL\Types;
 
-use App\Models\Recipe;
+use App\Models\Ingredient;
 use GraphQL\Type\Definition\Type;
-use Rebing\GraphQL\Support\Facades\GraphQL;
 use Rebing\GraphQL\Support\Type as GraphQLType;
 
-class RecipeType extends GraphQLType
+class IngredientType extends GraphQLType
 {
     protected $attributes = [
-        'name'  => 'Recipe',
-        'model' => Recipe::class,
+        'name' => 'Ingredient',
+        'model' => Ingredient::class,
     ];
 
     public function fields(): array
     {
         return [
-            'id'       => [
+            'id' => [
                 'type' => Type::int()
             ],
-            'title'     => [
+            'name' => [
                 'type' => Type::string()
             ],
-            'ingredients' => [
-                'type' => Type::listOf(GraphQL::type('ingredient'))
+            'amount'=> [
+                'type' => Type::string(),
+                'selectable' => false,
+                'resolve' => function($post) {return object_get($post, 'pivot.amount');},
             ]
         ];
     }

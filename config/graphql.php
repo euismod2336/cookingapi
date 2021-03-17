@@ -3,6 +3,7 @@
 declare(strict_types=1);
 
 use App\GraphQL\Queries\RecipesQuery;
+use App\GraphQL\Types\IngredientType;
 use App\GraphQL\Types\RecipeType;
 use example\Mutation\ExampleMutation;
 use example\Query\ExampleQuery;
@@ -103,7 +104,7 @@ return [
     'schemas' => [
         'default' => [
             'query' => [
-                 'recipes' => RecipesQuery::class,
+                'recipes' => RecipesQuery::class,
             ],
             'mutation' => [
                 // 'example_mutation'  => ExampleMutation::class,
@@ -124,6 +125,7 @@ return [
     //
     'types' => [
         'recipe' => RecipeType::class,
+        'ingredient' => IngredientType::class,
     ],
 
     // The types will be loaded on demand. Default is to load all types on each request
