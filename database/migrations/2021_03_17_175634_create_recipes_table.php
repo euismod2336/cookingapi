@@ -16,6 +16,18 @@ class CreateRecipesTable extends Migration
         Schema::create('recipes', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
+            $table->string('title');
+            $table->string('image')->nullable();
+            $table->text('description')->nullable();
+            $table->integer('amount_people')->nullable();
+            $table->integer('rating')->nullable();
+            $table->integer('effort')->nullable();
+            $table->string('time')->nullable();
+            $table->text('instructions')->nullable();
+            $table->enum('type', ['voor', 'hoofd', 'na', 'anders'])->default('hoofd');
+            $table->string('country_id')->nullable();
+            $table->text('flavor_profile')->nullable();
+            $table->softDeletes($column = 'deleted_at');
         });
     }
 
