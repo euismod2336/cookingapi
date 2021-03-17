@@ -2,6 +2,8 @@
 
 declare(strict_types=1);
 
+use App\GraphQL\Queries\RecipesQuery;
+use App\GraphQL\Types\RecipeType;
 use example\Mutation\ExampleMutation;
 use example\Query\ExampleQuery;
 use example\Type\ExampleRelationType;
@@ -101,7 +103,7 @@ return [
     'schemas' => [
         'default' => [
             'query' => [
-                // 'example_query' => ExampleQuery::class,
+                 'recipes' => RecipesQuery::class,
             ],
             'mutation' => [
                 // 'example_mutation'  => ExampleMutation::class,
@@ -121,9 +123,7 @@ return [
     // ]
     //
     'types' => [
-        // 'example'           => ExampleType::class,
-        // 'relation_example'  => ExampleRelationType::class,
-        // \Rebing\GraphQL\Support\UploadType::class,
+        'recipe' => RecipeType::class,
     ],
 
     // The types will be loaded on demand. Default is to load all types on each request
