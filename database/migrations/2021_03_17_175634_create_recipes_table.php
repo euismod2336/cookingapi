@@ -25,7 +25,7 @@ class CreateRecipesTable extends Migration
             $table->string('time')->nullable();
             $table->text('instructions')->nullable();
             $table->enum('type', ['voor', 'hoofd', 'na', 'anders'])->default('hoofd');
-            $table->int('country_id')->nullable();
+            $table->integer('country_id')->nullable();
             $table->text('flavor_profile')->nullable();
             $table->softDeletes($column = 'deleted_at');
         });

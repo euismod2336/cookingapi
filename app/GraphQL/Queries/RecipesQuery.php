@@ -39,6 +39,10 @@ class RecipesQuery extends Query
             'title' => [
                 'name' => 'title',
                 'type' => Type::string()
+            ],
+            'user_id' => [
+                'name' => 'user_id',
+                'type' => Type::int()
             ]
         ];
     }
