@@ -2,6 +2,9 @@
 
 declare(strict_types=1);
 
+use App\GraphQL\InputObject\IngredientInput;
+use App\GraphQL\InputObject\RecipeInput;
+use App\GraphQL\Mutations\RecipeMutation;
 use App\GraphQL\Queries\RecipesQuery;
 use App\GraphQL\Types\IngredientType;
 use App\GraphQL\Types\RecipeType;
@@ -105,7 +108,7 @@ return [
                 'recipes' => RecipesQuery::class,
             ],
             'mutation' => [
-                // 'example_mutation'  => ExampleMutation::class,
+                'recipe' => RecipeMutation::class
             ],
             'middleware' => [],
             'method' => ['get', 'post'],
@@ -126,6 +129,9 @@ return [
         'ingredient' => IngredientType::class,
         'country' => CountryType::class,
         'utensil' => UtensilsType::class,
+
+        'recipeInput' => RecipeInput::class,
+        'ingredientInput' => IngredientInput::class,
     ],
 
     // The types will be loaded on demand. Default is to load all types on each request
