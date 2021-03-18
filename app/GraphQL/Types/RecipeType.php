@@ -54,6 +54,9 @@ class RecipeType extends GraphQLType
             'ingredients' => [
                 'type' => Type::listOf(GraphQL::type('ingredient'))
             ],
+            'utensils' => [
+                'type' => Type::listOf(GraphQL::type('utensil'))
+            ],
             'country' => [
                 'type' => GraphQL::type('country')
             ]

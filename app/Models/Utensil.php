@@ -9,4 +9,9 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class Utensil extends Model
 {
     use HasFactory, SoftDeletes;
+
+    public function recipes()
+    {
+        return $this->belongsToMany(Recipe::class);
+    }
 }

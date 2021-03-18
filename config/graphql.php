@@ -6,6 +6,7 @@ use App\GraphQL\Queries\RecipesQuery;
 use App\GraphQL\Types\IngredientType;
 use App\GraphQL\Types\RecipeType;
 use App\GraphQL\Types\CountryType;
+use App\GraphQL\Types\UtensilsType;
 
 return [
 
@@ -124,6 +125,7 @@ return [
         'recipe' => RecipeType::class,
         'ingredient' => IngredientType::class,
         'country' => CountryType::class,
+        'utensil' => UtensilsType::class,
     ],
 
     // The types will be loaded on demand. Default is to load all types on each request
