@@ -41,7 +41,21 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
+    /**
+     * Any recipes this user has a rating for
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
+     */
     public function recipes()
+    {
+        return $this->belongsToMany(Recipe::class)->withPivot(['rating', 'description', 'favorite']);
+    }
+
+    /**
+     * Relates to recipes which this user is the owner of
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function ownd()
     {
         return $this->hasMany(Recipe::class);
     }
