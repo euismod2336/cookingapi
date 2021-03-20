@@ -15,8 +15,9 @@ class UserSeeder extends Seeder
     {
         \App\Models\User::create(
             [
-                'name' => 'Tasters',
-                'email' => 'taste@test.nl',
+                'id' => 0,
+                'name' => 'System',
+                'email' => 'system@cooking.nl',
                 'password' => '123-fake',
             ]
         );

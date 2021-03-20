@@ -20,6 +20,8 @@ class CreateIngredientsTable extends Migration
             $table->string('image')->nullable();
             $table->string('location')->nullable();
             $table->string('location_geo')->nullable();
+            $table->boolean('vegetarion')->default(1);
+            $table->boolean('vegan')->default(1);
             $table->softDeletes($column = 'deleted_at');
         });
 
@@ -28,6 +30,7 @@ class CreateIngredientsTable extends Migration
             $table->string('ingredient_id');
             $table->string('recipe_id');
             $table->string('amount');
+            $table->text('description')->nullable();
         });
     }
 
