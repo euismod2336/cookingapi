@@ -26,9 +26,7 @@ class IngredientType extends GraphQLType
             'amount' => [
                 'type' => Type::string(),
                 'selectable' => false,
-                'resolve' => function ($recipe) {
-                    return object_get($recipe, 'pivot.amount');
-                },
+                'resolve' => fn($recipe) => object_get($recipe, 'pivot.amount'),
             ]
         ];
     }
