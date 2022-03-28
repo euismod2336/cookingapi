@@ -14,7 +14,8 @@ use Illuminate\Database\Eloquent\Builder;
 /**
  * Class RecipesQuery
  *
- * eg. /graphql?query={recipes{id,title}}
+ * eg. /graphql?query={recipes{image,title}}
+ * eg. /graphql?query={recipes{image,title,ingredients{name,amount}}}
  *
  * @package App\GraphQL\Queries
  */
