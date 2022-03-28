@@ -42,5 +42,18 @@ class IngredientSeeder extends Seeder
                 'amount' => $ingredient['amount'],
             ]);
         }
+
+        shuffle($ingredients);
+        $ingredients = array_slice($ingredients, 0, 3);
+
+        foreach ($ingredients as $ingredient) {
+            $item = \App\Models\Ingredient::create(['name' => $ingredient['name']]);
+
+            DB::table('ingredient_recipe')->insert([
+                'ingredient_id' => $item->id,
+                'recipe_id' => 2,
+                'amount' => $ingredient['amount'],
+            ]);
+        }
     }
 }
