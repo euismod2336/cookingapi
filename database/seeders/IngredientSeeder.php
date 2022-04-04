@@ -31,13 +31,26 @@ class IngredientSeeder extends Seeder
                 'name' => 'Paprika',
                 'amount' => '1 gele, 1 rode'
             ],
+            [
+                'name' => 'Gember',
+                'amount' => '2 cm'
+            ],
+            [
+                'name' => 'Kurkuma',
+                'amount' => '1 el'
+            ],
+            [
+                'name' => 'Silvervlies uitjes',
+                'amount' => '3 stuks'
+            ],
         ];
 
-        foreach ($ingredients as $ingredient) {
+        foreach ($ingredients as &$ingredient) {
             $item = \App\Models\Ingredient::create(['name' => $ingredient['name']]);
+            $ingredient['id'] = $item->id;
 
             DB::table('ingredient_recipe')->insert([
-                'ingredient_id' => $item->id,
+                'ingredient_id' => $ingredient['id'],
                 'recipe_id' => 1,
                 'amount' => $ingredient['amount'],
             ]);
@@ -47,10 +60,8 @@ class IngredientSeeder extends Seeder
         $ingredients = array_slice($ingredients, 0, 3);
 
         foreach ($ingredients as $ingredient) {
-            $item = \App\Models\Ingredient::create(['name' => $ingredient['name']]);
-
             DB::table('ingredient_recipe')->insert([
-                'ingredient_id' => $item->id,
+                'ingredient_id' => $ingredient['id'],
                 'recipe_id' => 2,
                 'amount' => $ingredient['amount'],
             ]);

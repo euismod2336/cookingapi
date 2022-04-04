@@ -34,7 +34,7 @@ class CreateRecipesTable extends Migration
             $table->softDeletes($column = 'deleted_at');
         });
 
-        Schema::create('recipe_user', function (Blueprint $table) {
+        Schema::create('recipe_user', static function (Blueprint $table) {
             $table->foreignId('recipe_id')
                 ->constrained()
                 ->onDelete('cascade');

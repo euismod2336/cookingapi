@@ -6,9 +6,10 @@ use App\GraphQL\InputObject\IngredientInput;
 use App\GraphQL\InputObject\RecipeInput;
 use App\GraphQL\Mutations\RecipeMutation;
 use App\GraphQL\Queries\RecipesQuery;
+use App\GraphQL\Types\AlternativeType;
+use App\GraphQL\Types\CountryType;
 use App\GraphQL\Types\IngredientType;
 use App\GraphQL\Types\RecipeType;
-use App\GraphQL\Types\CountryType;
 use App\GraphQL\Types\UtensilsType;
 
 return [

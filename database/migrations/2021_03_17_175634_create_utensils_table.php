@@ -13,7 +13,7 @@ class CreateUtensilsTable extends Migration
      */
     public function up()
     {
-        Schema::create('utensils', function (Blueprint $table) {
+        Schema::create('utensils', static function (Blueprint $table) {
             $table->id();
             $table->timestamps();
             $table->string('name');
